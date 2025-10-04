@@ -12,6 +12,10 @@
 
         @media (max-width:768px) {
             display: block;
+
+            &__item {
+                margin: 0 auto;
+            }
         }
 
         .button {
