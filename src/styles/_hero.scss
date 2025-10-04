@@ -1,20 +1,36 @@
 @use "variaveis";
 
 .hero {
-    padding: 5.6vw;
+    padding: 9vw 5.6vw;
+    position: relative;
     min-height: 80vh;
-    background-image: url(../images/hero_desktop.jpeg);
-    background-repeat: no-repeat;
-    text-align: center;
+    background:
+        radial-gradient(circle at center, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%),
+        url(../images/scooby/hero.jpg);
     background-size: cover;
-    
+    background-position: center;
+    text-align: center;
+
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: inherit;
+        /* pega o mesmo background */
+        filter: blur(50px);
+        z-index: -1;
+    }
+
     @media (max-width:768px) {
         background-image: url(../images/hero_celular.jpeg);
         padding-top: 50vw;
         padding-top: calc(50vw + 25px);
         background-size: contain;
         background-repeat: no-repeat;
-        margin-top: -55px;
     }
 
     .button {
